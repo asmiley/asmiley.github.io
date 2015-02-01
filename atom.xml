@@ -4,7 +4,7 @@
  <title>a.Smiley</title>
  <link href="asmiley.github.io/atom.xml" rel="self"/>
  <link href="asmiley.github.io/"/>
- <updated>2015-02-01T11:04:36-05:00</updated>
+ <updated>2015-02-01T14:42:16-05:00</updated>
  <id>asmiley.github.io</id>
  <author>
    <name>Alex Smiley</name>
@@ -17,45 +17,79 @@
    <link href="asmiley.github.io/social-media-mining/2015/02/01/nltk-in-the-cloud/"/>
    <updated>2015-02-01T00:00:00-05:00</updated>
    <id>asmiley.github.io/social-media-mining/2015/02/01/nltk-in-the-cloud</id>
-   <content type="html">&lt;p&gt;In recent years cloud-based IDEs have become increasingly popular. Services like Koding and Cloud9 provide users with web-based development environments that make it easy to access your projects wherever you are and even collaborate with other users in real-time. The two previously mentioned services provide users with their own virtual machine (VM) running Ubuntu, and are preconfigured with Python, Node.js, Ruby, PHP, and more so that you can immediately jump in and start being productive. &lt;/p&gt;
+   <content type="html">&lt;p&gt;In recent years cloud-based IDEs have become increasingly popular. Services like &lt;a href=&quot;https://koding.com/R/asmiley&quot;&gt;Koding&lt;/a&gt; and &lt;a href=&quot;https://c9.io/&quot;&gt;Cloud9&lt;/a&gt; provide users with web-based development environments that make it easy to access your projects wherever you are and even collaborate with other users in real-time. The two previously mentioned services provide users with their own virtual machine (VM) running Ubuntu, and are preconfigured with Python, Node.js, Ruby, PHP, and more so that you can immediately jump in and start being productive. &lt;/p&gt;
 
-&lt;p&gt;The Natural Language Toolkit (NLTK), is a collection of natural language processing libraries and programs for Python. I&amp;rsquo;ll show you how simple it is to install NLTK on your VM so you can get started learning about natural language processing without having to worry about configuring it on multiple devices. In addition, I&amp;rsquo;ll walk through installing the NLTK Data packages used in Natural Language Processing with Python so that you can follow along with this great resource. &lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;NLTK&quot;&gt;Natural Language Toolkit&lt;/a&gt;, is a collection of natural language processing libraries and programs for Python. I&amp;rsquo;ll show you how simple it is to install NLTK on your VM so you can get started learning about natural language processing without having to worry about configuring it on multiple devices. In addition, I&amp;rsquo;ll walk through installing the NLTK Data packages used in &lt;a href=&quot;http://www.nltk.org/book/&quot;&gt;Natural Language Processing with Python&lt;/a&gt; so that you can follow along with this great resource. &lt;/p&gt;
 
 &lt;p&gt;We&amp;rsquo;ll be using Koding because that&amp;rsquo;s the service I&amp;rsquo;m more familiar with and because it provides the most free space out of all of the cloud IDEs that I&amp;rsquo;ve investigated, which leads us into an important factor to note: Koding&amp;rsquo;s free accounts are limited to 3 gigs of disk space. While this is enough to get started with NLTK and download the data libraries that we&amp;rsquo;ll use to follow along with the book, you may run into problems trying to install additional packages down the road. &lt;/p&gt;
 
-&lt;!--more--&gt;
+&lt;h3&gt;1. Setup your Koding account&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;asmiley.github.io/assets/images/nltk-koding/downloaded.jpg&quot; alt=&quot;My helpful screenshot&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To begin, you&amp;rsquo;ll have to set up your &lt;a href=&quot;https://koding.com/R/asmiley&quot;&gt;Koding&lt;/a&gt; account. Head on over to their site, register, and complete the email confirmation process. Once this is complete you should be able to log into your workspace. The first time you log in you will be prompted to initialize your VM. This process may take a minute or two. &lt;/p&gt;
 
-&lt;p&gt;We&amp;rsquo;ve also added a lot of different settings for &lt;a href=&quot;https://github.com/vmg/redcarpet&quot;&gt;Redcarpet&lt;/a&gt;,
-including being able to &lt;sup&gt;superscript,&lt;/sup&gt; &lt;u&gt;underline&lt;/u&gt;, &lt;mark&gt;highlight&lt;/mark&gt;,
-&lt;del&gt;strikethrough&lt;/del&gt;, and footnotes.&lt;sup id=&quot;fnref1&quot;&gt;&lt;a href=&quot;#fn1&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; It even automatically makes links into
-URLs: &lt;a href=&quot;http://www.jekyllrb.com&quot;&gt;www.jekyllrb.com&lt;/a&gt; and you can put multiple underscores in words without
-them leaning all over the place: this_word_has_underscores. It&amp;rsquo;ll also make your
-quotes look nice, like this: &amp;ldquo;hoho&amp;rdquo;, your dashes and hypens will be dashing too:
-&amp;mdash;/&amp;ndash;.&lt;/p&gt;
+&lt;p&gt;Take a moment to acquaint yourself with the Koding interface. On the left-hand side you&amp;rsquo;ll find menus, settings, and the file tree for your workspace. On the right side you&amp;rsquo;ll see the text editor and below that is the terminal. We&amp;rsquo;ll be working in the terminal to get NLTK installed.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h3&gt;2. Install pip&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;def print_hi(name)
-  puts &amp;quot;Hi, #{name}&amp;quot;
-end
-print_hi('Tom')
-#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;pip is a package manager for Python that will make it extremely easy to install NLTK and other Python packages. pip does not come pre-installed on our VM, so we&amp;rsquo;ll have to go down to our terminal and enter:&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of
-Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&amp;rsquo;s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;sudo apt-get install python-pip&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
+&lt;p&gt;You&amp;rsquo;ll be asked if you want to continue. Type &lt;code&gt;Y&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt;.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;li id=&quot;fn1&quot;&gt;
-&lt;p&gt;Who are quite handy&amp;nbsp;&lt;a href=&quot;#fnref1&quot; rev=&quot;footnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/nltk-koding/pip-confirmation.jpg&quot; alt=&quot;Confirm pip download&quot;&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;/ol&gt;
-&lt;/div&gt;
+&lt;h3&gt;3. Install NLTK&lt;/h3&gt;
+
+&lt;p&gt;Now that pip has been installed we can install nltk with a single command in our terminal. Go ahead and enter:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;sudo pip install -U nltk&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As the install runs you&amp;rsquo;ll probably receive a few warnings. You can ignore these. &lt;/p&gt;
+
+&lt;p&gt;To test that NLTK has been properly installed, enter &lt;code&gt;python&lt;/code&gt; in your terminal. Once Python is running, enter: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;import nltk&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If no errors are returned, NLTK has been succesfully installed. You should see something like this.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/nltk-koding/nltk-test.jpg&quot; alt=&quot;Test that NLTK has been installed correctly&quot;&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3&gt;4. Download NLTK Data packages&lt;/h3&gt;
+
+&lt;p&gt;NLTK comes with a number of data sources for us to work with. However, we&amp;rsquo;ll have to download them before we can start playing around with them. In your terminal, now that you have imported NLTK into Python, enter:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;nltk.download()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will display the NLTK Downloader interface. It should look something like this:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;/assets/images/nltk-koding/downloader.jpg&quot; alt=&quot;NLTK Data download interface&quot;&gt;
+&lt;br /&gt;
+At this point, type &lt;code&gt;d&lt;/code&gt; and press &lt;code&gt;enter&lt;/code&gt;. It will ask you the identifier of the package you want to download. We want to download the resources used in &lt;a href=&quot;http://www.nltk.org/book/&quot;&gt;Natural Language Processing with Python&lt;/a&gt;, so we&amp;rsquo;ll type &lt;code&gt;book&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt;. Finally, to exit the downloader, type &lt;code&gt;q&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt; one more time.&lt;/p&gt;
+
+&lt;p&gt;Now, before we can actually do anything with these texts we&amp;rsquo;ll have to import them into Python. To do this, enter:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;from nltk.book import *&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You should see:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;/assets/images/nltk-koding/downloaded.jpg&quot; alt=&quot;Terminal once the NLTK Data book library has been downloaded&quot;&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3&gt;That&amp;rsquo;s it!&lt;/h3&gt;
+
+&lt;p&gt;You now have NLTK installed on your own VM in the cloud and can access it on any computer. Have fun learning about natural language processing with Python! &lt;/p&gt;
+
+&lt;p&gt;If you run into any problems or have any additional questions, feel free to leave a comment below.
+&lt;br /&gt;&lt;/p&gt;
 </content>
  </entry>
  
