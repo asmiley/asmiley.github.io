@@ -4,7 +4,7 @@
  <title>a.Smiley</title>
  <link href="asmiley.github.io/atom.xml" rel="self"/>
  <link href="asmiley.github.io/"/>
- <updated>2015-02-01T14:42:16-05:00</updated>
+ <updated>2015-02-01T16:56:56-05:00</updated>
  <id>asmiley.github.io</id>
  <author>
    <name>Alex Smiley</name>
@@ -19,7 +19,7 @@
    <id>asmiley.github.io/social-media-mining/2015/02/01/nltk-in-the-cloud</id>
    <content type="html">&lt;p&gt;In recent years cloud-based IDEs have become increasingly popular. Services like &lt;a href=&quot;https://koding.com/R/asmiley&quot;&gt;Koding&lt;/a&gt; and &lt;a href=&quot;https://c9.io/&quot;&gt;Cloud9&lt;/a&gt; provide users with web-based development environments that make it easy to access your projects wherever you are and even collaborate with other users in real-time. The two previously mentioned services provide users with their own virtual machine (VM) running Ubuntu, and are preconfigured with Python, Node.js, Ruby, PHP, and more so that you can immediately jump in and start being productive. &lt;/p&gt;
 
-&lt;p&gt;The &lt;a href=&quot;NLTK&quot;&gt;Natural Language Toolkit&lt;/a&gt;, is a collection of natural language processing libraries and programs for Python. I&amp;rsquo;ll show you how simple it is to install NLTK on your VM so you can get started learning about natural language processing without having to worry about configuring it on multiple devices. In addition, I&amp;rsquo;ll walk through installing the NLTK Data packages used in &lt;a href=&quot;http://www.nltk.org/book/&quot;&gt;Natural Language Processing with Python&lt;/a&gt; so that you can follow along with this great resource. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.nltk.org/&quot;&gt;NLTK&lt;/a&gt;, The Natural Language Toolkit, is a collection of natural language processing libraries and programs for Python. I&amp;rsquo;ll show you how simple it is to install NLTK on your VM so you can get started learning about natural language processing without having to worry about configuring it on multiple devices. In addition, I&amp;rsquo;ll walk through installing the NLTK Data packages used in &lt;a href=&quot;http://www.nltk.org/book/&quot;&gt;Natural Language Processing with Python&lt;/a&gt; so that you can follow along with this great resource. &lt;/p&gt;
 
 &lt;p&gt;We&amp;rsquo;ll be using Koding because that&amp;rsquo;s the service I&amp;rsquo;m more familiar with and because it provides the most free space out of all of the cloud IDEs that I&amp;rsquo;ve investigated, which leads us into an important factor to note: Koding&amp;rsquo;s free accounts are limited to 3 gigs of disk space. While this is enough to get started with NLTK and download the data libraries that we&amp;rsquo;ll use to follow along with the book, you may run into problems trying to install additional packages down the road. &lt;/p&gt;
 
