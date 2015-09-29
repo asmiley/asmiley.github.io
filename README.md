@@ -1,3 +1,3 @@
 # asmiley-blog
 
-[Describe the project.]
+Personal GitHub Pages Jekyll blog.
